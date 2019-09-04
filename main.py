@@ -57,7 +57,9 @@ def process(dir, file, op_lists):
 
 if __name__ == '__main__':
 
-    image_dir = 'products-cat' #'rot_10,fliph','rot_10,flipv',
+    #image directory
+    image_dir = './products-cat' #'rot_10,fliph','rot_10,flipv',
+    #data augmentation list
     op_codes = ['fliph', 'flipv','rot_10','rot_10', 'noise_0.01', 'noise_0.02', 'noise_0.05', 'trans_20_10','trans_-10_0','blur_1.5'
                 'rot_10,fliph', 'rot_10,flipv', 'rot_10,noise_0.01', 'rot_10,noise_0.02', 'rot_10,noise_0.05', 'rot_10,trans_20_10','rot_10,trans_-10_0','rot_10,blur_1.5'
                 'fliph,blur_1.5', 'flipv,blur_1.5','rot_10,blur_1.5','rot_10,blur_1.5', 'noise_0.01,blur_1.5', 'noise_0.02,blur_1.5', 'noise_0.05,blur_1.5', 'trans_20_10,blur_1.5','trans_-10_0,blur_1.5'
