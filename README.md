@@ -24,6 +24,7 @@ using the codes listed in the table below:
 |`noise`|Adds random noise to the image|`noise_0.01`,`noise_0.5`|
 |`rot`|Rotates the image by the specified amount|`rot_90`,`rot_-45`|
 |`trans`|Shifts the pixels of the image by the specified amounts in the x and y directions|`trans_20_10`,`trans_-10_0`|
+|`crop`|Crops the image by the specified coordinates in the y (height) and x (width) directions|`crop_5_7_2_3` -  crops the upper by `5` and bottom side by `7`, and left by `2` and right side by `3`|
 |`zoom`|Zooms into the specified region of the image, performing stretching/shrinking as necessary|`zoom_0_0_20_20`,`zoom_-10_-20_10_10`|
 |`blur`|Blurs the image by the specified amount|`blur_1.5`|
 

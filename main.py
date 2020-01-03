@@ -10,12 +10,14 @@ from ops.flipv import FlipV
 from ops.zoom import Zoom
 from ops.blur import Blur
 from ops.noise import Noise
+from ops.crop import Crop
+from ops.resize import Resize
 from ops.translate import Translate
 from skimage.io import imread, imsave
 
 EXTENSIONS = ['png', 'jpg', 'jpeg', 'bmp']
 WORKER_COUNT = max(4 - 1, 1)
-OPERATIONS = [Rotate, FlipH, FlipV, Translate, Noise, Zoom, Blur]
+OPERATIONS = [Rotate, FlipH, FlipV, Translate, Noise, Zoom, Blur, Crop, Resize]
 
 '''
 Augmented files will have names matching the regex below, eg
@@ -58,12 +60,14 @@ def process(dir, file, op_lists):
 if __name__ == '__main__':
 
     #image directory
-    image_dir = './products-cat' #'rot_10,fliph','rot_10,flipv',
+    image_dir = 'img' #'rot_10,fliph','rot_10,flipv',
     #data augmentation list
-    op_codes = ['fliph', 'flipv','rot_10','rot_10', 'noise_0.01', 'noise_0.02', 'noise_0.05', 'trans_20_10','trans_-10_0','blur_1.5'
-                'rot_10,fliph', 'rot_10,flipv', 'rot_10,noise_0.01', 'rot_10,noise_0.02', 'rot_10,noise_0.05', 'rot_10,trans_20_10','rot_10,trans_-10_0','rot_10,blur_1.5'
-                'fliph,blur_1.5', 'flipv,blur_1.5','rot_10,blur_1.5','rot_10,blur_1.5', 'noise_0.01,blur_1.5', 'noise_0.02,blur_1.5', 'noise_0.05,blur_1.5', 'trans_20_10,blur_1.5','trans_-10_0,blur_1.5'
-    ]
+    #op_codes=['crop_0_10_0_0']
+    op_codes=['resize_200_200']
+    #op_codes = ['fliph', 'flipv','rot_10','rot_10', 'noise_0.01', 'noise_0.02', 'noise_0.05', 'trans_20_10','trans_-10_0','blur_1.5'
+    #            'rot_10,fliph', 'rot_10,flipv', 'rot_10,noise_0.01', 'rot_10,noise_0.02', 'rot_10,noise_0.05', 'rot_10,trans_20_10','rot_10,trans_-10_0','rot_10,blur_1.5'
+    #            'fliph,blur_1.5', 'flipv,blur_1.5','rot_10,blur_1.5','rot_10,blur_1.5', 'noise_0.01,blur_1.5', 'noise_0.02,blur_1.5', 'noise_0.05,blur_1.5', 'trans_20_10,blur_1.5','trans_-10_0,blur_1.5'
+    #]
 
     op_lists = []
     for op_code_list in op_codes:
