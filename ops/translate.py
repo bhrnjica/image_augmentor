@@ -12,7 +12,7 @@ class Translate:
         self.y_trans = y_trans
 
     def process(self, img):
-        return tf.warp(img, AffineTransform(translation=(-self.x_trans, -self.y_trans)))
+        return tf.warp(img,AffineTransform(translation=(-self.x_trans, -self.y_trans)),mode='edge', cval=1)
 
     @staticmethod
     def match_code(code):

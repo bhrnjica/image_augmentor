@@ -10,7 +10,8 @@ class Rotate:
         self.code = PREFIX + str(angle)
 
     def process(self, img):
-        return transform.rotate(img, -self.angle)
+        img =  transform.rotate(img, -self.angle, cval=1, mode='edge')
+        return img
 
     @staticmethod
     def match_code(code):

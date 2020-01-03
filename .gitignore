@@ -2,3 +2,6 @@
 *.iml
 .idea
 notes.txt
+/.ipynb_checkpoints
+/.vs
+/Untitled.ipynb
